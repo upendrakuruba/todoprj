@@ -15,7 +15,7 @@ def get_showing_todos(request,all_todo):
     return all_todo
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def home(request):
     all_todo=Todo.objects.filter(user=request.user)
     completed_count = all_todo.filter(status=True).count()
